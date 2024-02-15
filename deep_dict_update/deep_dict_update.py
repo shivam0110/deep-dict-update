@@ -1,7 +1,7 @@
 from typing import Dict, Any, Union, List
 import collections.abc
 
-def dict_update(orig_dict: Dict[str, Any], new_dict: Dict[str, Any]) -> Dict[str, Any]:
+def deep_dict_update(orig_dict: Dict[str, Any], new_dict: Dict[str, Any]) -> Dict[str, Any]:
     """
     Recursively updates a nested dictionary with the content of another dictionary.
 
@@ -27,13 +27,13 @@ def dict_update(orig_dict: Dict[str, Any], new_dict: Dict[str, Any]) -> Dict[str
 
         if isinstance(val, collections.abc.Mapping):
             # If both orig_dict[key] and val are dictionaries, recursively update
-            tmp = dict_update(orig_dict[key], val)
+            tmp = deep_dict_update(orig_dict[key], val)
             orig_dict[key] = tmp
         elif isinstance(val, list):
             # If the value is a list, iterate through the items
             # and apply dict_update for each dictionary in the list
             orig_dict[key] = [
-                dict_update(orig_dict[key][i] if i < len(orig_dict[key]) else {}, item) if isinstance(item, collections.abc.Mapping) else item
+                deep_dict_update(orig_dict[key][i] if i < len(orig_dict[key]) else {}, item) if isinstance(item, collections.abc.Mapping) else item
                 for i, item in enumerate(val)
             ]
         else:

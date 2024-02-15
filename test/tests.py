@@ -1,8 +1,8 @@
 import unittest
-from dict_update import dict_update
+from deep_dict_update import deep_dict_update
 
 class TestDeepDictUpdate(unittest.TestCase):
-    def test_dict_update_simple(self):
+    def test_deep_dict_update_simple(self):
         orig_dict = {
             'a': {
                 'b': 2,
@@ -34,10 +34,10 @@ class TestDeepDictUpdate(unittest.TestCase):
             'g': 6
         }
 
-        updated_dict = dict_update.dict_update(orig_dict, new_dict)
+        updated_dict = deep_dict_update(orig_dict, new_dict)
         self.assertEqual(updated_dict, expected_result)
 
-    def test_dict_update_with_list(self):
+    def test_deep_dict_update_with_list(self):
         orig_dict = {
             'a': {
                 'b': [1, 2, 3],
@@ -70,10 +70,10 @@ class TestDeepDictUpdate(unittest.TestCase):
             'g': 6
         }
 
-        updated_dict = dict_update.dict_update(orig_dict, new_dict)
+        updated_dict = deep_dict_update(orig_dict, new_dict)
         self.assertEqual(updated_dict, expected_result)
 
-    def test_dict_update_with_objects_list(self):
+    def test_deep_dict_update_with_objects_list(self):
         orig_dict = {
             'data': [
                 {'id': 1, 'name': 'Alice'},
@@ -95,10 +95,10 @@ class TestDeepDictUpdate(unittest.TestCase):
             ]
         }
 
-        updated_dict = dict_update.dict_update(orig_dict, new_dict)
+        updated_dict = deep_dict_update(orig_dict, new_dict)
         self.assertEqual(updated_dict, expected_result)
 
-    def test_dict_update_empty_orig_dict(self):
+    def test_deep_dict_update_empty_orig_dict(self):
         orig_dict = {}
 
         new_dict = {
@@ -117,7 +117,7 @@ class TestDeepDictUpdate(unittest.TestCase):
             }
         }
 
-        updated_dict = dict_update.dict_update(orig_dict, new_dict)
+        updated_dict = deep_dict_update(orig_dict, new_dict)
         self.assertEqual(updated_dict, expected_result)
 
 if __name__ == '__main__':

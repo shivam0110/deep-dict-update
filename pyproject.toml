@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "dict-update"
-version = "0.1.0"
+name = "deep-dict-update"
+version = "0.1.4"
 description = "Recursively update nested dictionaries with another dictionary"
 authors = ["Shivam Malpani"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "dict_update"}]
+packages = [{include = "deep_dict_update"}]
 
 [tool.poetry.dependencies]
 python = "^3.6"
