@@ -1,5 +1,5 @@
 from typing import Dict, Any, Union, List
-import collections
+import collections.abc
 
 def dict_update(orig_dict: Dict[str, Any], new_dict: Dict[str, Any]) -> Dict[str, Any]:
     """

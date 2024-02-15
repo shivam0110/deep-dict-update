@@ -34,7 +34,7 @@ class TestDeepDictUpdate(unittest.TestCase):
             'g': 6
         }
 
-        updated_dict = dict_update(orig_dict, new_dict)
+        updated_dict = dict_update.dict_update(orig_dict, new_dict)
         self.assertEqual(updated_dict, expected_result)
 
     def test_dict_update_with_list(self):
@@ -70,7 +70,7 @@ class TestDeepDictUpdate(unittest.TestCase):
             'g': 6
         }
 
-        updated_dict = dict_update(orig_dict, new_dict)
+        updated_dict = dict_update.dict_update(orig_dict, new_dict)
         self.assertEqual(updated_dict, expected_result)
 
     def test_dict_update_with_objects_list(self):
@@ -95,7 +95,7 @@ class TestDeepDictUpdate(unittest.TestCase):
             ]
         }
 
-        updated_dict = dict_update(orig_dict, new_dict)
+        updated_dict = dict_update.dict_update(orig_dict, new_dict)
         self.assertEqual(updated_dict, expected_result)
 
     def test_dict_update_empty_orig_dict(self):
@@ -117,7 +117,7 @@ class TestDeepDictUpdate(unittest.TestCase):
             }
         }
 
-        updated_dict = dict_update(orig_dict, new_dict)
+        updated_dict = dict_update.dict_update(orig_dict, new_dict)
         self.assertEqual(updated_dict, expected_result)
 
 if __name__ == '__main__':
