@@ -1,0 +1,37 @@
+name: Build and publish python package
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+          
+      - name: Install Poetry
+        run: |
+          pip3 install poetry && poetry config virtualenvs.create false && poetry install --no-dev
+
+      - name: Install Poetry Dependencies
+        run: poetry install
+
+      - name: Poetry Config 
+        run: poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }}
+                                                                                      
+      - name: Poetry Build 
+        run: poetry build 
+
+      - name: Poetry Publish 
+        run: poetry publish 
+
