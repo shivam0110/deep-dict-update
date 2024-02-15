@@ -7,37 +7,32 @@ A Python package for recursively updating nested dictionaries with the content o
 
 ## Installation
 
-You can install `dict-update` via pip:
+You can install `deep-dict-update` via pip:
 
 ```sh
-pip install dict-update
+pip install deep-dict-update
 ```
 
 ## Usage
 
 ``` python
-from dict_update import dict_update
+from deep_dict_update import deep_dict_update
 
 orig_dict = {
-    'a': {
-        'b': 2,
-        'c': {
-            'd': 3
-        }
-    }
+    'data': [
+        {'id': 1, 'name': 'Alice'},
+        {'id': 2, 'name': 'Bob'}
+    ]
 }
 
 new_dict = {
-    'a': {
-        'c': {
-            'e': 4
-        },
-        'f': 5
-    },
-    'g': 6
+    'data': [
+        {'id': 3, 'name': 'Charlie'},
+        {'id': 4, 'name': 'David'}
+    ]
 }
 
-updated_dict = dict_update(orig_dict, new_dict)
+updated_dict = deep_dict_update(orig_dict, new_dict)
 print(updated_dict)
 ```
 
@@ -45,15 +40,10 @@ print(updated_dict)
 
 ``` python
 {
-    'a': {
-        'b': 2,
-        'c': {
-            'd': 3,
-            'e': 4
-        },
-        'f': 5
-    },
-    'g': 6
+    'data': [
+        {'id': 3, 'name': 'Charlie'},
+        {'id': 4, 'name': 'David'}
+    ]
 }
 ```
 
