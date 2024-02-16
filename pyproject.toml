@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "deep-dict-update"
-version = "0.1.4"
+version = "0.1.5"
 description = "Recursively update nested dictionaries with another dictionary"
 authors = ["Shivam Malpani"]
 license = "MIT"
