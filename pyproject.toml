@@ -7,9 +7,7 @@ license = "MIT"
 homepage = "https://shivam0110.github.io/deep-dict-update/"
 readme = "README.md"
 packages = [{include = "deep_dict_update"}]
-
-[tool.poetry.repository]
-url = "https://github.com/shivam0110/deep-dict-update"
+repository = "https://github.com/shivam0110/deep-dict-update"
 
 [tool.poetry.dependencies]
 python = "^3.6"
