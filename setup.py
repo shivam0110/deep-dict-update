@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='deep-dict-update',
-    version='0.1.5',
+    version='0.1.6',
     author='Shivam Malpani',
     author_email='shivammalpani111@gmail.com',
     description='Recursively update nested dictionaries with another dictionary',
